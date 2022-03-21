@@ -1,0 +1,6 @@
+[submodule "libs/svg_extrude"]
+	path = libs/svg_extrude
+	url = git@github.com:deffi/svg_extrude.git
+[submodule "libs/cjlano_svg"]
+	path = libs/cjlano_svg
+	url = git@github.com:deffi/cjlano_svg.git
