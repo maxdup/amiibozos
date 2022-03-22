@@ -1,5 +1,6 @@
 import argparse
 import re
+import os
 from dataclasses import dataclass
 
 from typing import Optional, Iterable, Tuple, Generator, TextIO, Dict
@@ -103,7 +104,6 @@ class TokenGroup(Group):
 
         def create_group(color: Color, group_shapes: Iterable[Shape]):
             tok = TokenGroup(color, tuple(group_shapes), name=name)
-            print(tok.name)
             return tok
 
         if color_mapping is None:
@@ -161,11 +161,11 @@ def render_base(writer):
             writer.scad_writer.print('cylinder(h=2.64, r=16, $fn=120);')
 
             with writer.scad_writer.translate([0, 0, -1]):
-                writer.scad_writer.print('cylinder(h=1.48, r=14.5, $fn=120);')
+                writer.scad_writer.print('cylinder(h=1.48, r=14.4, $fn=120);')
             with writer.scad_writer.translate([0, 0, 2.16]):
-                writer.scad_writer.print('cylinder(h=1.48, r=14.5, $fn=120);')
+                writer.scad_writer.print('cylinder(h=1.48, r=14.4, $fn=120);')
             with writer.scad_writer.translate([0, 0, 1.2]):
-                writer.scad_writer.print('cylinder(h=0.24, r=13, $fn=120);')
+                writer.scad_writer.print('cylinder(h=0.24, r=13.6, $fn=120);')
 
 
 class TokenGroupNames(GroupNames):
@@ -197,7 +197,7 @@ class TokenOutputWriter(OutputWriter):
 
 def render_faces(writer, scene_front, scene_back):
     thickness = 0.72
-    overlay_thickness = None
+    overlay_thickness = 0.24
     flip = False
 
     # Write the definitions
@@ -222,10 +222,13 @@ def render_faces(writer, scene_front, scene_back):
 
 
 def make_amiibozo(frontPath, backPath):
-    scene_front = create_scene('./svgs/' + frontPath)
-    scene_back = create_scene('./svgs/' + backPath, reverse=True)
-    base_path = re.sub('.svg$', '', frontPath)
-    outputName = './models/' + base_path + '.stl'
+    
+    scene_front = create_scene(os.path.join('svgs', frontPath))
+    scene_back = create_scene(os.path.join('svgs', backPath), reverse=True)
+    
+    outName = re.sub('.svg$', '.stl', frontPath)
+    outputName = os.path.join('models', outName)
+
     print(f"Rendering to {outputName}")
     with ScadRenderer().render_file(outputName, defines=None) as scad_file:
         writer = TokenOutputWriter(scad_file)
@@ -241,3 +244,4 @@ if __name__ == "__main__":
             for front in series['frontsides']:
 
                 make_amiibozo(front, series['backside'])
+
