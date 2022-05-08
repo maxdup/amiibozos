@@ -149,7 +149,7 @@ def render_base(writer):
         cylinder(h=2.64, r=16);
         translate([0, 0, -1]) cylinder(h=1.48, r=14);
         translate([0, 0, 2.16]) cylinder(h=1.48, r=14);
-        translate([0, 0, 1.2]) cylinder(h=0.24, r=13);
+        translate([0, 0, 1.2]) cylinder(h=0.24, r=12.6);
     }
     '''
 
@@ -161,11 +161,11 @@ def render_base(writer):
             writer.scad_writer.print('cylinder(h=2.64, r=16, $fn=120);')
 
             with writer.scad_writer.translate([0, 0, -1]):
-                writer.scad_writer.print('cylinder(h=1.48, r=14.4, $fn=120);')
+                writer.scad_writer.print('cylinder(h=1.48, r=14.44, $fn=120);')
             with writer.scad_writer.translate([0, 0, 2.16]):
-                writer.scad_writer.print('cylinder(h=1.48, r=14.4, $fn=120);')
+                writer.scad_writer.print('cylinder(h=1.48, r=14.44, $fn=120);')
             with writer.scad_writer.translate([0, 0, 1.2]):
-                writer.scad_writer.print('cylinder(h=0.24, r=13.6, $fn=120);')
+                writer.scad_writer.print('cylinder(h=0.24, r=13.2, $fn=120);')
 
 
 class TokenGroupNames(GroupNames):
@@ -242,6 +242,5 @@ if __name__ == "__main__":
         data = json.loads(f.read())
         for series in data['series']:
             for front in series['frontsides']:
-
                 make_amiibozo(front, series['backside'])
 

@@ -4,8 +4,8 @@
     "backside": "smash_series.svg",
     "frontsides": ["smash_banjo.svg",
                    "smash_bayonetta.svg",
-                   "smash_bowserjr.svg",
                    "smash_bowser.svg",
+                   "smash_bowserjr.svg",  
                    "smash_byleth.svg",
                    "smash_chrom.svg",
                    "smash_cloud.svg",
@@ -46,7 +46,6 @@
                    "smash_megaman.svg",
                    "smash_metaknight.svg",
                    "smash_mewtwo.svg",
-                   "smash_miifighter.svg",
                    "smash_minmin.svg",
                    "smash_mrgameandwatch.svg",
                    "smash_mythra.svg",
@@ -61,8 +60,8 @@
                    "smash_pokemontrainer.svg",
                    "smash_richter.svg",
                    "smash_ridley.svg",
-                   "smash_robin.svg",
                    "smash_rob.svg",
+                   "smash_robin.svg",
                    "smash_rosalina.svg",
                    "smash_roy.svg",
                    "smash_ryu.svg",
@@ -84,7 +83,14 @@
                    "smash_yoshi.svg",
                    "smash_younglink.svg",
                    "smash_zelda.svg",
-                   "smash_zerosuitsamus.svg"]
+                   "smash_zerosuitsamus.svg",
+                   "smash_squirtle.svg",
+                   "smash_ivysaur.svg",
+                   "smash_charizard.svg",
+                   "smash_hero.svg",
+                   "smash_miibrawler.svg",
+                   "smash_miigunner.svg",
+                   "smash_miiswordfighter.svg"]
   }]
 }
 
