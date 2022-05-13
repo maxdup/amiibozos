@@ -34,6 +34,9 @@ python tokenify.py
 
 The generated models can be found in `amiibozos/models/`
 
+## How to print
+Check out the video build guide [on youtube](https://www.youtube.com/watch?v=0f_edBinO98)
+
 ## What you need for printing
 - 25mm diameter NTAG215 NFC stickers
 - A pausable 3D printer
@@ -41,7 +44,7 @@ The generated models can be found in `amiibozos/models/`
 
 ## What slicer settings to use
 
-It's highly recommended to use PrusaSlicer even if you don't use a prusa printer. The models are optimized for PrusaSlicer and PruciaSlicer offers unique options that will enhance your print.
+It's highly recommended to use PrusaSlicer even if you don't use a prusa printer. The models are optimized for PrusaSlicer and PrusaSlicer offers unique options that will enhance your print.
 
 ### Print Settings
 
